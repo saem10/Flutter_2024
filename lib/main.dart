@@ -1,35 +1,36 @@
 import 'package:flutter/material.dart';
-
 void main(){
-  runApp(MyApp());
+  runApp(App());
 }
-
-class MyApp extends StatelessWidget{
+class App extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeScreen(),
-      title: 'Saem',
-    );
-  }
+      debugShowCheckedModeBanner: true,
+      home: Scaffold(
+        backgroundColor: Colors.blueGrey,
+        appBar: AppBar(
+          title: Text('Home screen'),
+          backgroundColor: Colors.cyan,
+        ),
+        body:
+        Column(
+          children: [
+            Image.asset('Images/natural.jpg',
+              width:400,
+              height:400,
+              //fit: BoxFit.contain,
+              //alignment: Alignment.bottomCenter,
+            ),
+            Image.network('https://img-va.myshopline.com/image/store/1688111732036/-8-2.jpeg?w=1000&h=1000',
+              width:200,
+              height:200,
+            ),
+          ],
+        ),
 
-}
-class HomeScreen extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueGrey,
-      appBar: AppBar(
-        backgroundColor: Colors.deepOrange,
-        leading: Icon(Icons.home,color: Colors.black,size: 32,),
-        title: Text('Home'),),
-      body: Center(
-        child: Text('Mir Saem Hasan', style: TextStyle(
-            fontSize: 24, color: Colors.white
-        ),),
       ),
-
     );
-  }
 
+  }
 }
