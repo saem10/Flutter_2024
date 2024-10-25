@@ -95,20 +95,28 @@ class Home extends StatelessWidget {
             ),
             // Alert dialog button
             ElevatedButton(
-                onPressed:(){
+                onPressed: () {
                   showDialog(
-                      barrierColor:Colors.green,
-                      context: context, builder: (context){
-                    return AlertDialog(
-                      title: Text('Delete'),
-                      content: Text('Are you sure?'),
-                      actions: [
-                        TextButton(onPressed:(){}, child: Text('Yes'),),
-                        TextButton(onPressed:(){}, child: Text('No'),),
-                      ],
-                    ); });
-                }, child: Text('Dialog Button')),
-
+                      barrierColor: Colors.green,
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: Text('Delete'),
+                          content: Text('Are you sure?'),
+                          actions: [
+                            TextButton(
+                              onPressed: () {},
+                              child: Text('Yes'),
+                            ),
+                            TextButton(
+                              onPressed: () {},
+                              child: Text('No'),
+                            ),
+                          ],
+                        );
+                      });
+                },
+                child: Text('Dialog Button')),
           ],
         ),
       ),
