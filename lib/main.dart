@@ -203,6 +203,7 @@ class Home extends StatelessWidget {
             ],
           ),*/
 
+
         child: ListView.builder(
             itemCount: friedlist.length,
             itemBuilder: (context,index){
