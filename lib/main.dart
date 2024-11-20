@@ -16,99 +16,202 @@ class App extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+   Home({super.key});
+
+
+  List<String>friedlist=[
+    'Saem',
+    'Saem',
+    'Saem',
+    'Saem',
+    'Saem',
+    'Saem',
+    'Saem',
+    'Saem',
+    'Hasan',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Home'),
-          leading: Icon(
-            Icons.home_filled,
-            color: Colors.white,
-            size: 32,
-          ),
+      appBar: AppBar(
+        title: Text('Home'),
+        backgroundColor: Colors.blueGrey,
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
+        ],
+        //leading: Icon(Icons.add),
+      ),
+      drawer: Drawer(
+          elevation: 30,
+          shadowColor: Colors.red,
           backgroundColor: Colors.blueGrey,
-        ),
-        body: Center(
+          width: 250,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 16,),
-              ElevatedButton(
-                  onPressed: () {
-                    showModalBottomSheet(
-                        barrierColor: Colors.blueGrey.shade100,
-                        backgroundColor: Colors.deepOrange.shade300,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8)),
-                        isScrollControlled: false,
-                        useSafeArea: false,
-                        enableDrag: true,
-                        context: context,
-                        builder: (ctx) {
-                          return Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 16),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Title',
-                                      style: TextStyle(fontSize: 18),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Divider(
-                                height: 10,
-                                thickness: 4,
-                              ),
-                              Text('Sample'),
-                              Row(
-                                children: [
-                                  ElevatedButton(
-                                      onPressed: () {}, child: Text('Save')),
-                                  ElevatedButton(
-                                      onPressed: () {}, child: Text('Cancel')),
-                                ],
-                              )
-                            ],
-                          );
-                        });
-                  },
-                  child: Text('Show Dialog')),
-              SizedBox(height: 16,),
-              TextField(
-                maxLength:100 ,
-
-                // Show the typing value
-                onChanged: (String? value){
-                  print(value);
-                },
-                controller: TextEditingController(),
-                obscureText: true,
-                maxLines:1 ,
-                keyboardType: TextInputType.number,
-                enabled: true,
-                decoration: InputDecoration(hintText: 'Phone',
-                  labelText: 'Phone Number',
-                  //label: Icon(Icons.add),
-                  prefixIcon: Icon(Icons.phone),
-                  suffixIcon: Icon(Icons.person),
-                  //counterText: '',
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red)),
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.red)),
-                  focusedBorder:OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green,width: 2)),
-                ),
-
-              ),
+              Text('Saem'),
+              Text('Saem'),
             ],
+          )),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.blue,
+        selectedFontSize: 16,
+        unselectedFontSize: 14,
+        showUnselectedLabels: true,
+        showSelectedLabels: true,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+        ],
+      ),
+      /*bottomNavigationBar: NavigationBar(
+        destinations: [
+          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+          NavigationDestination(icon: Icon(Icons.search), label: 'Search'),
+        ],
+      ),*/
+      /*body:Scrollbar(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+                Text('Saem Hasan'),
+              ],
+            ),
           ),
-        ));
+        ),*/
+      body:Scrollbar(
+        thickness: 15,
+        radius: Radius.circular(10),
+        interactive: true,
+        /*child: ListView(
+          scrollDirection: Axis.vertical,
+            reverse: false,
+            padding: EdgeInsets.symmetric(horizontal: 16,vertical: 16),
+            children: [
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem Hasan'),
+              Text('Saem'),
+              Text('Saem'),
+              Text('Saem'),
+              Text('Saem'),
+              Text('Saem'),
+              Text('Saem'),
+              Text('Saem'),
+              Text('Saem'),
+              Text('Saem'),
+              Text('Saem'),
+              Text('Saem'),
+              Text('Saem'),
+              Text('Saem'),
+            ],
+          ),*/
+
+        child: ListView.builder(
+            itemCount: friedlist.length,
+            itemBuilder: (context,index){
+          return Padding(padding: EdgeInsets.all(16),
+            child: Text(friedlist[index]),
+          );
+        }),
+      ),
+
+    );
   }
 }
