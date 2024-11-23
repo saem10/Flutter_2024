@@ -16,10 +16,9 @@ class App extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-   Home({super.key});
+  Home({super.key});
 
-
-  List<String>friedlist=[
+  List<String> friendlist = [
     'Saem',
     'Saem',
     'Saem',
@@ -29,190 +28,61 @@ class Home extends StatelessWidget {
     'Saem',
     'Saem',
     'Hasan',
+    'Arup',
+    'Arup',
+    'Arup',
+    'Arup',
+    'Arup',
+    'Arup',
+    'Arup',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-        backgroundColor: Colors.blueGrey,
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
-        ],
-        //leading: Icon(Icons.add),
-      ),
-      drawer: Drawer(
-          elevation: 30,
-          shadowColor: Colors.red,
+        appBar: AppBar(
+          title: Text('Home'),
           backgroundColor: Colors.blueGrey,
-          width: 250,
-          child: Column(
-            children: [
-              Text('Saem'),
-              Text('Saem'),
-            ],
-          )),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        selectedItemColor: Colors.green,
-        unselectedItemColor: Colors.blue,
-        selectedFontSize: 16,
-        unselectedFontSize: 14,
-        showUnselectedLabels: true,
-        showSelectedLabels: true,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-        ],
-      ),
-      /*bottomNavigationBar: NavigationBar(
-        destinations: [
-          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.search), label: 'Search'),
-        ],
-      ),*/
-      /*body:Scrollbar(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-                Text('Saem Hasan'),
-              ],
-            ),
-          ),
-        ),*/
-      body:Scrollbar(
-        thickness: 15,
-        radius: Radius.circular(10),
-        interactive: true,
-        /*child: ListView(
-          scrollDirection: Axis.vertical,
-            reverse: false,
-            padding: EdgeInsets.symmetric(horizontal: 16,vertical: 16),
-            children: [
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem Hasan'),
-              Text('Saem'),
-              Text('Saem'),
-              Text('Saem'),
-              Text('Saem'),
-              Text('Saem'),
-              Text('Saem'),
-              Text('Saem'),
-              Text('Saem'),
-              Text('Saem'),
-              Text('Saem'),
-              Text('Saem'),
-              Text('Saem'),
-              Text('Saem'),
-            ],
-          ),*/
+          actions: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
+          ],
+          //leading: Icon(Icons.add),
+        ),
+        body: ListView.builder(
+          itemCount: friendlist.length,
+          itemBuilder: (context, index) {
+            /*return Padding(
+              padding: const EdgeInsets.all(16),
+              child: Text(friendlist[index]),
+            );
+          }*/
+            return ListTile(
+              title: Text(friendlist[index]),
+              subtitle: Text('Friend no $index'),
+              trailing: Icon(Icons.arrow_forward),
+              leading: CircleAvatar(
+                backgroundColor: Colors.green,
+                child: Icon(Icons.person),
+              ),
+              onTap: (){
+                print('On tap $index');
+              },
 
+              contentPadding: EdgeInsets.symmetric(
+                horizontal: 24,
+                vertical: 4,
+              ),
+              //dense: false,
+              //enabled: false,
 
-        child: ListView.builder(
-            itemCount: friedlist.length,
-            itemBuilder: (context,index){
-          return Padding(padding: EdgeInsets.all(16),
-            child: Text(friedlist[index]),
-          );
-        }),
-      ),
-
+              titleTextStyle: TextStyle(fontSize: 24,color: Colors.deepOrangeAccent),
+              subtitleTextStyle:TextStyle(fontSize: 12,color: Colors.deepOrangeAccent) ,
+            );
+          }
+    ),
     );
   }
+
+
 }
