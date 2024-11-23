@@ -36,6 +36,10 @@ class Home extends StatelessWidget {
     'Arup',
     'Arup',
   ];
+  TextEditingController _emailController =TextEditingController();
+  TextEditingController _passwordController =TextEditingController();
+
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -49,33 +53,55 @@ class Home extends StatelessWidget {
           ],
           //leading: Icon(Icons.add),
         ),
-        /*body: GridView(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisSpacing: 12,
-            crossAxisSpacing: 8,
 
+
+      body:Padding(
+        padding: const EdgeInsets.all(16),
+        child: Form(
+           key: _formKey,
+          child: Column(
+            children: [
+              TextFormField(
+                controller: _emailController,
+                decoration: InputDecoration(
+                  hintText:'Email',
+                ),
+                validator: (String? value){
+                  if (value == null || value.isEmpty){
+                    return 'Enter your Email';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                autovalidateMode: AutovalidateMode.always,
+                controller: _passwordController,
+                decoration: InputDecoration(
+                  hintText: 'Password'
+                ),
+               validator: (String? value) {
+                 if (value?.isEmpty ?? true) {
+                   return 'Enter your Email';
+                 }
+                 return null;
+               },
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  /*String email = _emailController.text;
+                  String password = _passwordController.text;
+                  if (email.isNotEmpty && password.isNotEmpty) {
+                    print('Login succes');*/
+                 if (_formKey.currentState!.validate()){
+                   print('Login success');
+                 }
+                },
+                child: Text('Tap'),
+              ),
+            ],
           ),
-          children: [
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-          ],
-        )*/
-      body:GridView.builder(
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-          itemCount: friendlist.length,
-          itemBuilder: (context, index) {
-            return Center(
-              child: Text(friendlist[index]),
-            );
-          }),
+        ),
+      ) ,
     );
   }
 }
