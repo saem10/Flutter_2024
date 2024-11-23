@@ -49,40 +49,33 @@ class Home extends StatelessWidget {
           ],
           //leading: Icon(Icons.add),
         ),
-        body: ListView.builder(
+        /*body: GridView(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 12,
+            crossAxisSpacing: 8,
+
+          ),
+          children: [
+            Text('data'),
+            Text('data'),
+            Text('data'),
+            Text('data'),
+            Text('data'),
+            Text('data'),
+            Text('data'),
+            Text('data'),
+          ],
+        )*/
+      body:GridView.builder(
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
           itemCount: friendlist.length,
           itemBuilder: (context, index) {
-            /*return Padding(
-              padding: const EdgeInsets.all(16),
+            return Center(
               child: Text(friendlist[index]),
             );
-          }*/
-            return ListTile(
-              title: Text(friendlist[index]),
-              subtitle: Text('Friend no $index'),
-              trailing: Icon(Icons.arrow_forward),
-              leading: CircleAvatar(
-                backgroundColor: Colors.green,
-                child: Icon(Icons.person),
-              ),
-              onTap: (){
-                print('On tap $index');
-              },
-
-              contentPadding: EdgeInsets.symmetric(
-                horizontal: 24,
-                vertical: 4,
-              ),
-              //dense: false,
-              //enabled: false,
-
-              titleTextStyle: TextStyle(fontSize: 24,color: Colors.deepOrangeAccent),
-              subtitleTextStyle:TextStyle(fontSize: 12,color: Colors.deepOrangeAccent) ,
-            );
-          }
-    ),
+          }),
     );
   }
-
-
 }
