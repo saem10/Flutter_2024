@@ -36,10 +36,7 @@ class Home extends StatelessWidget {
     'Arup',
     'Arup',
   ];
-  TextEditingController _emailController =TextEditingController();
-  TextEditingController _passwordController =TextEditingController();
 
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -53,55 +50,42 @@ class Home extends StatelessWidget {
           ],
           //leading: Icon(Icons.add),
         ),
+      body:
+      /*ListView.builder(
+        itemCount: friendlist.length,
+          itemBuilder: (BuildContext context, int index){
+        return Column(
+          children: [
+            Text(friendlist[index]),
+            Divider(
+              height: 12,
+              thickness: 2,
+              indent: 10,
+              endIndent: 10,
+            ),
+
+          ],
+        );
+      }),*/
+      ListView.separated(
+          itemCount: friendlist.length,
+          itemBuilder:(BuildContext context, int index){
+            return Column(
+              children: [
+                Text(friendlist[index]),
+              ],
+            );
+          },
+          separatorBuilder: (BuildContext context, int index){
+            return Divider(
+              color: Colors.red,
+              indent: 10,
+              endIndent: 10,
+            );
+          })
 
 
-      body:Padding(
-        padding: const EdgeInsets.all(16),
-        child: Form(
-           key: _formKey,
-          child: Column(
-            children: [
-              TextFormField(
-                controller: _emailController,
-                decoration: InputDecoration(
-                  hintText:'Email',
-                ),
-                validator: (String? value){
-                  if (value == null || value.isEmpty){
-                    return 'Enter your Email';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                autovalidateMode: AutovalidateMode.always,
-                controller: _passwordController,
-                decoration: InputDecoration(
-                  hintText: 'Password'
-                ),
-               validator: (String? value) {
-                 if (value?.isEmpty ?? true) {
-                   return 'Enter your Email';
-                 }
-                 return null;
-               },
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  /*String email = _emailController.text;
-                  String password = _passwordController.text;
-                  if (email.isNotEmpty && password.isNotEmpty) {
-                    print('Login succes');*/
-                 if (_formKey.currentState!.validate()){
-                   print('Login success');
-                 }
-                },
-                child: Text('Tap'),
-              ),
-            ],
-          ),
-        ),
-      ) ,
+
     );
   }
 }
